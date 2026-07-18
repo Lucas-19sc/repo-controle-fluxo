@@ -1,0 +1,26 @@
+name: Workflow matriz
+
+on:
+  workflow_dispatch:
+
+jobs:
+  exemplo-fluxo-execucao:
+    strategy:
+      matrix:
+        versao: [16, 18, 20]
+        plataforma: [windows, ubuntu]
+
+    runs-on: ${{ matrix.plataforma }}-latest
+
+    steps:
+      - name: Instalação do Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.versao }}
+
+      - name: Exibição da versão e da plataforma
+        shell: bash
+        run: |
+          node --version
+          echo "Sistema operacional: ${{ runner.os }}"
+          echo "Versão configurada: ${{ matrix.versao }}"
