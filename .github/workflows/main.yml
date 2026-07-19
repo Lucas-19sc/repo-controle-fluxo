@@ -7,7 +7,7 @@ on:
     chave:
       type: string
       default: pipeline-aula
-concurrency: ${{ inputs.chave }}
+concurrency: ${{ input.chave }}
 jobs:
   exemplo-fluxo-execucao-01:
     runs-on: ubuntu-latest
