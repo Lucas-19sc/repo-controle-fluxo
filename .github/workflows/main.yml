@@ -16,7 +16,7 @@ jobs:
         run: |
           sleep 120;
           echo "Action executada job 01"
-jobs:
+
   exemplo-fluxo-execucao-02:
     runs-on: ubuntu-latest
     steps:
